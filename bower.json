@@ -1,0 +1,25 @@
+{
+  "name": "speedtest-component",
+  "main": "speedtest-component.js",
+  "authors": [
+    "Cherrie Mae Andrea Sun <cesun@up.edu.ph>"
+  ],
+  "description": "Speed test component designed to be imported into a AngularJs application",
+  "keywords": [
+    "speedtest",
+    "sampleonly",
+    "privateuse",
+    "getping",
+    "getupload",
+    "getdownload"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
