@@ -1,6 +1,7 @@
 {
   "name": "speedtest-component",
   "main": "speedtest-component.js",
+  "version": "2.0.0",
   "authors": [
     "Cherrie Mae Andrea Sun <cesun@up.edu.ph>"
   ],

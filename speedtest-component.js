@@ -1,18 +1,22 @@
 
-var NetworkSpeed = require('network-speed');
-var Ping = require('web-pingjs');
-var testNetworkSpeed = new NetworkSpeed();
+const NetworkSpeed = require('network-speed');
+const http = require('http');
 
-var http = require('http');
+class SpeedTest {
 
-async function getNetworkDownloadSpeed() {
+    constructor() {
+        this.testNetworkSpeed = new NetworkSpeed();
+    }
+
+    async function getNetworkDownloadSpeed() {
     var baseUrl = 'https://eu.httpbin.org/stream-bytes/500000';
     var fileSizeInBytes = 500000;
-    var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
+    var speed = await this.testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
     return speed;
 }
 
 async function getNetworkUploadSpeed() {
+
     var options = {
         hostname: 'www.google.com',
         port: 80,
@@ -23,7 +27,7 @@ async function getNetworkUploadSpeed() {
         },
     };
     var fileSizeInBytes = 2000000
-    var speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
+    var speed = await this.testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
     return speed;
 }
 
@@ -69,4 +73,6 @@ async function getServiceProvider() {
         console.error(`Got error: ${e.message}`);
     });
 }
+}
+module.exports = SpeedTest;
 
