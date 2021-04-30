@@ -1,0 +1,24 @@
+{
+  "name": "speedtest-component",
+  "version": "2.0.0",
+  "description": "",
+  "main": "speedtest-component.js",
+  "dependencies": {
+    "network-speed": "^2.1.1",
+    "web-pingjs": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasun08/speedtest-comp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreasun08/speedtest-comp/issues"
+  },
+  "homepage": "https://github.com/andreasun08/speedtest-comp#readme"
+}

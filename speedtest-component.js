@@ -1,22 +1,16 @@
 
-const NetworkSpeed = require('network-speed');
-const http = require('http');
-
-class SpeedTest {
-
-    constructor() {
-        this.testNetworkSpeed = new NetworkSpeed();
-    }
-
-    async function getNetworkDownloadSpeed() {
+async function getNetworkDownloadSpeed() {
+    const NetworkSpeed = require('network-speed');
+    const testNetworkSpeed = new NetworkSpeed();
     var baseUrl = 'https://eu.httpbin.org/stream-bytes/500000';
     var fileSizeInBytes = 500000;
-    var speed = await this.testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
+    var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
     return speed;
 }
 
 async function getNetworkUploadSpeed() {
-
+    const NetworkSpeed = require('network-speed');
+    const testNetworkSpeed = new NetworkSpeed();
     var options = {
         hostname: 'www.google.com',
         port: 80,
@@ -27,7 +21,7 @@ async function getNetworkUploadSpeed() {
         },
     };
     var fileSizeInBytes = 2000000
-    var speed = await this.testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
+    var speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
     return speed;
 }
 
@@ -37,6 +31,7 @@ async function getPing() {
 }
 
 async function getServiceProvider() {
+    const http = require('http');
     return http.get('http://ip-api.com/json/', (res) => {
         const { statusCode } = res;
         const contentType = res.headers['content-type'];
@@ -73,6 +68,5 @@ async function getServiceProvider() {
         console.error(`Got error: ${e.message}`);
     });
 }
-}
-module.exports = SpeedTest;
+
 
