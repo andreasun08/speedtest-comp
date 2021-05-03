@@ -7,14 +7,14 @@
  * # speedTestComponent
  * Service in the speedtestComponentApp.
  */
-angular.module('speedtestComponentApp', ['NetworkSpeedCheck'])
-  .service('speedTestComponent', function (NetworkSpeedCheck, $http) {
+angular.module('speedtestComponentApp')
+  .service('speedTestComponent', function ($window, $http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     return {
       getNetworkDownloadSpeed: async function () {
         try {
-          const testNetworkSpeed = new NetworkSpeedCheck();
+          const testNetworkSpeed = new $window.NetworkSpeedCheck();
           var baseUrl = 'https://eu.httpbin.org/stream-bytes/6000000';
           var fileSizeInBytes = 6000000;
           var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
@@ -24,7 +24,7 @@ angular.module('speedtestComponentApp', ['NetworkSpeedCheck'])
         }
       },
       getNetworkUploadSpeed: async function () {
-        const testNetworkSpeed = new NetworkSpeedCheck();
+        const testNetworkSpeed = new $window.NetworkSpeedCheck();
         var options = {
           hostname: 'www.google.com',
           port: 80,
