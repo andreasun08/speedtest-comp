@@ -12,32 +12,32 @@ angular.module('speedtestComponentApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     return {
-      getNetworkDownloadSpeed: async function () {
-        try {
-          const testNetworkSpeed = new $window.NetworkSpeedCheck();
-          var baseUrl = 'https://eu.httpbin.org/stream-bytes/6000000';
-          var fileSizeInBytes = 6000000;
-          var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
-          return speed;
-        } catch (e) {
-          return e.message;
-        }
-      },
-      getNetworkUploadSpeed: async function () {
-        const testNetworkSpeed = new $window.NetworkSpeedCheck();
-        var options = {
-          hostname: 'www.google.com',
-          port: 80,
-          path: '/catchers/544b09b4599c1d0200000289',
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        };
-        var fileSizeInBytes = 4000000;
-        var speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
-        return speed;
-      },
+      // getNetworkDownloadSpeed: async function () {
+      //   try {
+      //     const testNetworkSpeed = new $window.NetworkSpeedCheck();
+      //     var baseUrl = 'https://eu.httpbin.org/stream-bytes/6000000';
+      //     var fileSizeInBytes = 6000000;
+      //     var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
+      //     return speed;
+      //   } catch (e) {
+      //     return e.message;
+      //   }
+      // },
+      // getNetworkUploadSpeed: async function () {
+      //   const testNetworkSpeed = new $window.NetworkSpeedCheck();
+      //   var options = {
+      //     hostname: 'www.google.com',
+      //     port: 80,
+      //     path: '/catchers/544b09b4599c1d0200000289',
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   };
+      //   var fileSizeInBytes = 4000000;
+      //   var speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
+      //   return speed;
+      // },
       getServiceProvider: async function () {
         return new Promise(function (resolve, reject) {
           var startTime = new Date().getTime();
