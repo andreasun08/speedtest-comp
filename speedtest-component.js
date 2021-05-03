@@ -31,17 +31,6 @@ async function getNetworkUploadSpeed() {
     return speed;
 }
 
-
-async function getPing() {
-    try {
-        var result = await ping('https://google.com');
-        return result;
-    } catch (error) {
-        return error.message;
-    }
-
-}
-
 async function getServiceProvider() {
     return new Promise(function (resolve, reject) {
         const http = require('http');
@@ -89,22 +78,8 @@ async function getServiceProvider() {
 
 }
 
+module.exports = { getNetworkDownloadSpeed, getNetworkUploadSpeed, getServiceProvider };
 
-
-// getNetworkDownloadSpeed().then(function (params) {
-//     console.log('download');
-//     console.log(params);
-// });
-
-// getNetworkUploadSpeed().then(function (params) {
-//     console.log('upload');
-//     console.log(params);
-// });
-
-// getServiceProvider().then(function (params) {
-//     console.log(params.isp);
-//     console.log(params.ping);
-// });
 
 
 

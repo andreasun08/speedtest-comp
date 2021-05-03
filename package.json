@@ -2,10 +2,10 @@
   "name": "speedtest-component",
   "version": "2.0.0",
   "description": "",
-  "main": "speedtest-component.js",
+  "main": "app/scripts/services/speedtestcomponent.js",
   "dependencies": {
     "network-speed": "^2.1.1",
-    "web-pingjs": "^1.0.1"
+    "require": "^2.4.20"
   },
   "devDependencies": {},
   "scripts": {
