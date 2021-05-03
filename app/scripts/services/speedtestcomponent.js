@@ -83,5 +83,5 @@ angular.module('speedtestComponentApp', ['NetworkSpeedCheck'])
         });
 
       }
-    }
+    };
   });
