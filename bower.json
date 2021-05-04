@@ -23,7 +23,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jsbandwidth": "^1.1.2"
-  }
+  "dependencies": {}
 }
