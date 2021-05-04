@@ -7,8 +7,8 @@
  * # speedTestComponent
  * Service in the speedtestComponentApp.
  */
-var speedtestComponentApp = angular.module('speedtestComponentApp');
-speedtestComponentApp.service('speedTestComponent', function ($window, $http, jsBandwidth) {
+var speedtestComponentApp = angular.module('speedtestComponentApp', []);
+speedtestComponentApp.service('speedTestComponent', function ($window, $http) {
   // AngularJS will instantiate a singleton by calling "new" on this function
 
   return {
