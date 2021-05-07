@@ -31,7 +31,7 @@ speedtestComponentApp.service('speedTestComponent', function ($window, $http) {
     getNetworkUploadSpeed: function () {
       const testNetworkSpeed = new $window.NetworkSpeed();
       var options = {
-        hostname: 'http://httpbin.org/',
+        hostname: 'httpbin.org',
         // port: 80,
         // path: '/catchers/544b09b4599c1d0200000289',
         method: 'POST',
