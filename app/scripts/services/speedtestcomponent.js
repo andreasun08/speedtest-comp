@@ -29,22 +29,18 @@ speedtestComponentApp.service('speedTestComponent', function ($window, $http) {
 
     },
     getNetworkUploadSpeed: function () {
-      return new Promise(function (resolve, reject) {
-        const testNetworkSpeed = new $window.NetworkSpeed();
-        var options = {
-          hostname: 'http://httpbin.org/',
-          // port: 80,
-          // path: '/catchers/544b09b4599c1d0200000289',
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        };
-        var fileSizeInBytes = 60000;
-        testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes).then(function(res){
-          resolve(res);
-        });
-      });
+      const testNetworkSpeed = new $window.NetworkSpeed();
+      var options = {
+        hostname: 'http://httpbin.org/',
+        // port: 80,
+        // path: '/catchers/544b09b4599c1d0200000289',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      var fileSizeInBytes = 60000;
+      return testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
 
     },
     getServiceProvider: function () {
